@@ -421,7 +421,7 @@ def do_split_networks(in_netlist):
             thisupl = {"uplinks": in_netlist[net]["devices"][dev["serial"]]["uplinks"]}
             # This is the format of the output network. 'Network Name - device type"
             newname = base_name + " - " + thisdevtype
-            newdev = {**dev, **thisupl}
+            newdev = {dev, thisupl}
 
             # Append or create this entry in the output dict
             if newname in devdict:
